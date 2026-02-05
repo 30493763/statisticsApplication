@@ -4,6 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// aurthor: ching ho, Li
+// student id: 30493763
+// last update date: 05-Feb-2026
+// last update time: 11:29 AM
+// description: This program calculates the factorial of a given number using two different algorithms and compares their performance.
+// Algorithem 2 reference: https://scicomp.stackexchange.com/questions/42510/what-are-the-benefits-of-cutting-by-half-the-number-of-multiplications-needed-to
+// github repo:https://github.com/30493763/factorialCalculation.git
+
 namespace statisticsApplication
 {
     internal class Program
