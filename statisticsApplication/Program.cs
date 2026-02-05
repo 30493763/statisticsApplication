@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 // last update date: 05-Feb-2026
 // last update time: 11:29 AM
 // description: This program calculates the factorial of a given number using two different algorithms and compares their performance.
-// Algorithem 2 reference: https://scicomp.stackexchange.com/questions/42510/what-are-the-benefits-of-cutting-by-half-the-number-of-multiplications-needed-to
-// github repo:https://github.com/30493763/factorialCalculation.git
+// github repo:https://github.com/30493763/statisticsApplication.git
 
 namespace statisticsApplication
 {
@@ -20,7 +19,10 @@ namespace statisticsApplication
         {
             Console.WriteLine("=== Statistics Application ===");
             Console.WriteLine();
-            
+
+            // get user input with static method GetUserInput()
+            // integers stored in a list (that can be accessed by index and resized dynamically.)
+            // user can enter as many as they want until they enter -1 to finish
             List<int> numbers = GetUserInput();
             
             if (numbers.Count == 0)
@@ -36,8 +38,14 @@ namespace statisticsApplication
             Console.ReadKey();
         }
 
+        //***********************************************************************************************************************************
+        //         HELPER METHODS
+        //***********************************************************************************************************************************
+
+        // GetUserInput: Prompts the user to enter integers one at a time until they enter -1 to finish. Validates input and returns a list of integers.
         static List<int> GetUserInput()
         {
+            const string INVALID_INPUT_MESSAGE = "Invalid input. Please enter a valid number (integer) or enter -1 to finish.";
             List<int> numbers = new List<int>();
             Console.WriteLine("Enter integers one at a time (enter -1 to finish):");
             Console.WriteLine();
@@ -45,24 +53,22 @@ namespace statisticsApplication
             while (true)
             {
                 Console.Write("Enter number: ");
-                string input = Console.ReadLine();
-                
-                if (double.TryParse(input, out double parsedValue))
+                if (int.TryParse(Console.ReadLine(), out int parsedValue))
                 {
                     int number = (int)parsedValue;
-                    if (number == -1)
-                    {
+                    if (number == -1) 
                         break;
+                    else if (number ==0 || number < -1) 
+                        Console.WriteLine($"{INVALID_INPUT_MESSAGE}");
+                    else
+                    {
+                        numbers.Add(number);
+                        Console.WriteLine($"Added: {number} (Total count: {numbers.Count})");
                     }
-                    numbers.Add(number);
-                    Console.WriteLine($"Added: {number} (Total count: {numbers.Count})");
                 }
                 else
-                {
-                    Console.WriteLine("Invalid input. Please enter a valid number.");
-                }
+                    Console.WriteLine($"{INVALID_INPUT_MESSAGE}");
             }
-            
             return numbers;
         }
 
