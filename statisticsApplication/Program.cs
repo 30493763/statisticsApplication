@@ -17,23 +17,48 @@ namespace statisticsApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=== Statistics Application ===");
-            Console.WriteLine();
+            bool continueRunning = true;
 
-            // get user input with static method GetUserInput()
-            // integers stored in a list (that can be accessed by index and resized dynamically.)
-            // user can enter as many as they want until they enter -1 to finish
-            List<int> numbers = GetUserInput();
-            
-            if (numbers.Count == 0)
+            while (continueRunning)
             {
-                Console.WriteLine("No valid numbers entered. Exiting...");
-                Console.ReadKey();
-                return;
+                Console.WriteLine("=== Statistics Application ===");
+                Console.WriteLine();
+
+                // get user input with static method GetUserInput()
+                // integers stored in a list (that can be accessed by index and resized dynamically.)
+                // user can enter as many as they want until they enter -1 to finish
+                List<int> numbers = GetUserInput();
+
+                if (numbers.Count == 0)
+                {
+                    Console.WriteLine("No valid numbers entered. Exiting...");
+                    Console.ReadKey();
+                    return;
+                }
+
+                DisplayStatistics(numbers);
+
+                // Ask if user wants to run again
+                Console.WriteLine();
+                Console.Write("Do you want to calculate statistics again? (y/n): ");
+                string response = Console.ReadLine()?.ToLower();
+
+                if (response == "n")
+                {
+                    continueRunning = false;
+                    Console.WriteLine("\nThank you for using Statistics Application. Goodbye!");
+                }
+                else if (response == "y")
+                {
+                    Console.Clear(); // Clear console for next run
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Exiting application...");
+                    continueRunning = false;
+                }
             }
-            
-            DisplayStatistics(numbers);
-            
+
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }
