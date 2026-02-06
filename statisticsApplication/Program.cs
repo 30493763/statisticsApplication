@@ -19,6 +19,7 @@ namespace statisticsApplication
         {
             bool continueRunning = true;
 
+            // Main loop to allow user to run the application multiple times without restarting
             while (continueRunning)
             {
                 Console.WriteLine("=== Statistics Application ===");
