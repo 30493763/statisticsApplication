@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 // aurthor: ching ho, Li
 // student id: 30493763
-// last update date: 05-Feb-2026
+// last update date: 06-Feb-2026
 // last update time: 11:29 AM
 // description: This program calculates the factorial of a given number using two different algorithms and compares their performance.
 // github repo:https://github.com/30493763/statisticsApplication.git
@@ -53,7 +53,7 @@ namespace statisticsApplication
             while (true)
             {
                 Console.Write("Enter number: ");
-                if (int.TryParse(Console.ReadLine(), out int parsedValue))
+                if (int.TryParse(Console.ReadLine(), out int parsedValue)) //Use int.TryParse() to avoid crash if the user enters non integer input.
                 {
                     int number = (int)parsedValue;
                     if (number == -1) 
@@ -85,9 +85,9 @@ namespace statisticsApplication
         static double CalculateMedian(List<int> numbers)
         {
             List<int> sorted = new List<int>(numbers);
-            sorted.Sort();
-            int count = sorted.Count;
-            
+            sorted.Sort(); //Use numbers.Sort() to sort the list.
+            int count = sorted.Count; //Use numbers.Count to get the number of elements in the list.
+
             if (count % 2 == 0)
             {
                 // Even count: average of two middle values
@@ -145,9 +145,10 @@ namespace statisticsApplication
 
         static int CalculateRange(List<int> numbers)
         {
-            return numbers.Max() - numbers.Min();
+            return numbers.Max() - numbers.Min(); //Use numbers.Max() and numbers.Min() to get max and min values.
         }
 
+        // Standard Deviation: Measures the amount of variation or dispersion in a set of values. It is calculated as the square root of the average of the squared differences from the mean.
         static double CalculateStandardDeviation(List<int> numbers)
         {
             double mean = CalculateMean(numbers);
@@ -158,14 +159,15 @@ namespace statisticsApplication
                 sumOfSquares += Math.Pow(numbers[i] - mean, 2);
             }
             
-            return Math.Sqrt(sumOfSquares / numbers.Count);
+            return Math.Sqrt(sumOfSquares / numbers.Count); // Use Math.Sqrt() to calculate the square root.
         }
 
+        // method to display all the statistics in a formatted manner
         static void DisplayStatistics(List<int> numbers)
         {
             Console.WriteLine();
             Console.WriteLine("=== Statistical Results ===");
-            Console.WriteLine($"Data Set: [{string.Join(", ", numbers)}]");
+            Console.WriteLine($"Data Set: [{string.Join(", ", numbers)}]"); //Use string.Join(", ", mode) to print a list of mode values.
             Console.WriteLine($"Count: {numbers.Count}");
             Console.WriteLine();
             
@@ -175,7 +177,7 @@ namespace statisticsApplication
             List<int> modes = CalculateMode(numbers);
             
             // Check if there's no mode (all values appear equally)
-            Dictionary<int, int> frequencies = new Dictionary<int, int>();
+            Dictionary<int, int> frequencies = new Dictionary<int, int>(); //Use Dictionary<int, int> to store frequencies.
             for (int i = 0; i < numbers.Count; i++)
             {
                 if (frequencies.ContainsKey(numbers[i]))
