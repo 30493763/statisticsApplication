@@ -1,12 +1,12 @@
-﻿<img src="https://github.com/30493763/factorialCalculation/blob/master/factorialCalculation/image/neko_logo.jpg" alt="" align="center" width="auto" height="auto"><h1 align="center">FACTORIAL</h1>
-<p align="center"><a href="#project-description">Project Description</a> - <a href="#key-features">Key Features</a> - <a href="#technology-stack">Tech Stack</a></p>
-
-<img src="https://github.com/30493763/factorialCalculation/blob/master/factorialCalculation/image/screenShot1.jpg" alt="" align="center" width="auto" height="auto">
+﻿<img src="https://github.com/30493763/statisticsApplication/blob/master/statisticsApplication/image/neko_logo.jpg" alt="" align="center" width="auto" height="auto"><h1 align="center">FACTORIAL</h1>
 
 
 # Statistics Application
 
 A console-based C# application that calculates various statistical measures for a given dataset of integers.
+
+<img src="https://github.com/30493763/statisticsApplication/blob/master/statisticsApplication/image/Picture2.png" alt="" align="center" width="auto" height="auto">
+
 
 ## 📋 Description
 
