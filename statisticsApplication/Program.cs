@@ -1,15 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Threading.Tasks;
 
-// aurthor: ching ho, Li
-// student id: 30493763
-// last update date: 06-Feb-2026
-// last update time: 11:29 AM
-// description: This program calculates the factorial of a given number using two different algorithms and compares their performance.
-// github repo:https://github.com/30493763/statisticsApplication.git
+
+//## 👤 Author
+
+//**Ching Ho, Li**
+//- Student ID: 30493763
+//- Institution: City of Glasgow College
+//- GitHub: [@30493763] (https://github.com/30493763)
+
+//## 📅 Version History
+
+//-**v1.0 * *(06 - Feb - 2026) - Initial release
+//  - Basic statistical calculations
+//  - Input validation
+//  - Repeat functionality
+
+//## 📄 License
+
+//This project is created for educational purposes as part of Applied Mathematics coursework.
+
+//## 🙏 Acknowledgments
+
+//- City of Glasgow College - Applied Mathematics Department
+//- Statistical formulas and concepts from course materials
+
+//---
+
+//**Last Updated**: February 06, 2026
 
 namespace statisticsApplication
 {
